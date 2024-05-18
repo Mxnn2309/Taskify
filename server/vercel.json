@@ -1,12 +1,36 @@
 {
     "version": 2,
     "builds": [
-        {
-            "src": "index.js",
-            "use": "@vercel/node"
-        }
+      {
+        "src": "index.js",
+        "use": "@vercel/node"
+      }
     ],
     "routes": [
-        { "src": "/(.*)", "dest": "/index.js" }
+      {
+        "src": "/(.*)",
+        "dest": "index.js"
+      }
+    ],
+    "rewrites": [
+      {
+        "source": "/login",
+        "destination": "https://taskify-server-one.vercel.app/login",
+        "headers": {
+          "Access-Control-Allow-Origin": "https://taskify-orcin.vercel.app",
+          "Access-Control-Allow-Methods": "POST",
+          "Access-Control-Allow-Headers": "Content-Type, Authorization"
+        }
+      },
+      {
+        "source": "/tasks/(.*)",
+        "destination": "https://taskify-server-one.vercel.app/tasks/$1",
+        "headers": {
+          "Access-Control-Allow-Origin": "https://taskify-orcin.vercel.app",
+          "Access-Control-Allow-Methods": "GET, PUT, DELETE",
+          "Access-Control-Allow-Headers": "Content-Type, Authorization"
+        }
+      }
     ]
-}
+  }
+  
