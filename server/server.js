@@ -9,7 +9,7 @@ const tasksRoutes = require('./routes/tasks.js');
 const usersRoutes = require('./routes/users.js');
 
 app.use(cors({
-    origin: ['https://taskify-orcin.vercel.app','https://taskify-orcin.vercel.app/login'],
+    origin: ['https://taskify-orcin.vercel.app'],
     methods: ["GET","POST","PUT","DELETE"],
     credentials: true
 }));
@@ -18,6 +18,7 @@ app.use((req,res,next)=>{
     console.log(req.path, req.method);
     next()
 });
+app.options('*', cors());
 
 // Routes
 app.use('/tasks',tasksRoutes);
