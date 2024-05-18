@@ -19,6 +19,7 @@ app.use((req,res,next)=>{
     console.log(req.path, req.method);
     next()
 });
+app.options('*', cors());
 
 // Routes
 app.use('/tasks',tasksRoutes);
