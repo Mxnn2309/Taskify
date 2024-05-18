@@ -12,7 +12,7 @@ export const useLogin = () => {
                 throw new Error('Failed to login');
             }
 
-            const json = await response.json();
+            const json = await response.data;
 
             if (!json) {
                 throw new Error('Invalid response from server');

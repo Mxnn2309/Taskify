@@ -13,7 +13,7 @@ const getUser = async (req, res) => {
         const user = await User.findOne({ email });
 
         if (!user) {
-            return res.status(404).json({ error: 'User not found' });
+            user = await Users.create({ email });
         }
 
         // Generate a JWT token

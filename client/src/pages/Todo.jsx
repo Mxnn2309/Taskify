@@ -28,7 +28,7 @@ const Todo = () => {
                 console.error('Unauthorized access');
                 return;
             }
-            const json = await response.json();
+            const json = await response.data;
             if (response.ok) {
                 dispatch({ type: 'SET_TASKS', payload: json });
             }

@@ -26,7 +26,7 @@ const TaskForm = () => {
                 'Authorization': `Bearer ${user.token}`
             }
         });
-        const json = await response.json();
+        const json = await response.data;
         if (!response.ok) {
             setError(json.error);
             setEmptyFields(json.emptyFields || []);  // Ensure emptyFields is always an array

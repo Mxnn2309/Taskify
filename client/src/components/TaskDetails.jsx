@@ -22,7 +22,7 @@ const TaskDetails = ({ task }) => {
             console.error('Unauthorized access');
             return;
         }
-        const json = await response.json();
+        const json = await response.data;
         if (response.ok) {
             dispatch({ type: 'DELETE_TASK', payload: json });
         }
@@ -44,7 +44,7 @@ const TaskDetails = ({ task }) => {
                 return;
             }
             if (response.ok) {
-                const updatedTask = await response.json();
+                const updatedTask = await response.data;
                 setCompleted(updatedTask.complete);
                 dispatch({ type: 'UPDATE_TASK', payload: updatedTask });
             }
