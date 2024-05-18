@@ -1,6 +1,7 @@
 import { useState } from 'react';
-import { useTasksContext } from '../hooks/useTasksContext';
-import { useAuthContext } from '../hooks/useAuthContext';
+import { useTasksContext } from '../hooks/useTasksContext.jsx';
+import { useAuthContext } from '../hooks/useAuthContext.jsx';
+import axios from '../api/axios.js'
 
 const TaskForm = () => {
     const [title, setTitle] = useState("");
@@ -18,11 +19,8 @@ const TaskForm = () => {
             return;
         }
         const task = { title, desc };
-        const response = await fetch('/tasks', {
-            method: 'POST',
-            body: JSON.stringify(task),
+        const response = await axios.post('/tasks', task, {
             headers: {
-                "Content-Type": "application/json",
                 'Authorization': `Bearer ${user.token}`
             }
         });

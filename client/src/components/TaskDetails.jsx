@@ -1,6 +1,6 @@
 import { useState } from 'react';
-import { useTasksContext } from "../hooks/useTasksContext";
-import { useAuthContext } from '../hooks/useAuthContext';
+import { useTasksContext } from "../hooks/useTasksContext.jsx";
+import { useAuthContext } from '../hooks/useAuthContext.jsx';
 import axios from '../api/axios'
 
 const TaskDetails = ({ task }) => {

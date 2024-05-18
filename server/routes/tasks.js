@@ -1,8 +1,8 @@
 const express = require('express');
 const router = express.Router();
-const requireAuth = require('../middleware/requireAuth');
+const requireAuth = require('../middleware/requireAuth.js');
 
-const { getTasks, getTask, createTask, deleteTask, updateTask } = require('../controllers/tasksController');
+const { getTasks, getTask, createTask, deleteTask, updateTask } = require('../controllers/tasksController.js');
 
 router.use(requireAuth);
 

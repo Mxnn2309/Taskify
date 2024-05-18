@@ -1,10 +1,10 @@
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 
-import { useAuthContext } from './hooks/useAuthContext'
+import { useAuthContext } from './hooks/useAuthContext.jsx'
 
-import Navbar from "./components/Navbar"
-import Todo from "./pages/Todo"
-import Home from "./pages/Home"
+import Navbar from "./components/Navbar.jsx"
+import Todo from "./pages/Todo.jsx"
+import Home from "./pages/Home.jsx"
 
 function App() {
 

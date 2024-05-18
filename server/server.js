@@ -5,16 +5,19 @@ require('dotenv').config();
 
 const app = express();
 
-const tasksRoutes = require('./routes/tasks');
-const usersRoutes = require('./routes/users');
+const tasksRoutes = require('./routes/tasks.js');
+const usersRoutes = require('./routes/users.js');
 
-app.use(cors());
+app.use(cors({
+    origin: ['https://taskify-orcin.vercel.app','https://taskify-orcin.vercel.app/login'],
+    methods: ["GET","POST","PUT","DELETE"],
+    credentials: true
+}));
 app.use(express.json());
 app.use((req,res,next)=>{
     console.log(req.path, req.method);
     next()
 });
-app.options('/login', cors());
 
 // Routes
 app.use('/tasks',tasksRoutes);

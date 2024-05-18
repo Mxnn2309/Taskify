@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 
 // Schema
-const Tasks = require('../models/TaskModel');
+const Tasks = require('../models/TaskModel.js');
 
 // GET all tasks
 const getTasks = async (req, res) => {

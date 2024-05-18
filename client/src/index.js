@@ -1,9 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './App';
+import App from './App.js';
 import './index.css';
-import { TasksContextProvider } from './context/TaskContext';
-import { AuthContextProvider } from './context/AuthContext';
+import { TasksContextProvider } from './context/TaskContext.jsx';
+import { AuthContextProvider } from './context/AuthContext.jsx';
 import { GoogleOAuthProvider } from '@react-oauth/google';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));

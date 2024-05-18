@@ -1,5 +1,5 @@
 import axios from '../api/axios';
-import { useAuthContext } from './useAuthContext';
+import { useAuthContext } from './useAuthContext.jsx';
 
 export const useLogin = () => {
     const { dispatch } = useAuthContext();
