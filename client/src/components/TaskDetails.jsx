@@ -13,7 +13,7 @@ const TaskDetails = ({ task }) => {
             console.error('User not logged in');
             return;
         }
-        const response = await axios.delete('/tasks/' + task._id, {
+        const response = await axios.delete('https://taskify-server-blond.vercel.app/tasks/' + task._id, {
             headers: {
                 'Authorization': `Bearer ${user.token}`
             }
@@ -34,7 +34,7 @@ const TaskDetails = ({ task }) => {
             return;
         }
         try {
-            const response = await axios.put(`/tasks/${task._id}`, { complete: !completed },{
+            const response = await axios.put(`https://taskify-server-blond.vercel.app/tasks/${task._id}`, { complete: !completed },{
                 headers: {
                     'Authorization': `Bearer ${user.token}`
                 },

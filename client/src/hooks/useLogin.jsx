@@ -6,7 +6,7 @@ export const useLogin = () => {
 
     const login = async (email) => {
         try {
-            const response = await axios.post('/login', { email })
+            const response = await axios.post('https://taskify-server-blond.vercel.app/login/', { email })
 
             if (!response.ok) {
                 throw new Error('Failed to login');

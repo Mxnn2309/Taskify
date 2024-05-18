@@ -18,7 +18,7 @@ const Todo = () => {
                 console.error('User not logged in');
                 return;
             }
-            const response = await axios.get('/tasks', {
+            const response = await axios.get('https://taskify-server-blond.vercel.app/tasks', {
                 headers: {
                     'Authorization': `Bearer ${user.token}`
                 }

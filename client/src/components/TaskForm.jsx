@@ -19,7 +19,7 @@ const TaskForm = () => {
             return;
         }
         const task = { title, desc };
-        const response = await axios.post('/tasks', task, {
+        const response = await axios.post('https://taskify-server-blond.vercel.app/tasks', task, {
             headers: {
                 'Authorization': `Bearer ${user.token}`
             }
