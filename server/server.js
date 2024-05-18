@@ -8,12 +8,7 @@ const app = express();
 const tasksRoutes = require('./routes/tasks');
 const usersRoutes = require('./routes/users');
 
-app.use(cors(
-    {
-        origin: ["https://taskify-orcin.vercel.app"],
-        methods: ["POST"],
-        credentials: true
-}));
+app.use(cors());
 app.use(express.json());
 app.use((req,res,next)=>{
     console.log(req.path, req.method);
