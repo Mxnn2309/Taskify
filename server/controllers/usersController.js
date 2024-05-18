@@ -10,10 +10,10 @@ const getUser = async (req, res) => {
 
     try {
         // Find the user by email
-        const user = await User.findOne({ email });
+        let user = await User.findOne({ email });
 
         if (!user) {
-            user = await Users.create({ email });
+            user = await User.create({ email });
         }
 
         // Generate a JWT token
