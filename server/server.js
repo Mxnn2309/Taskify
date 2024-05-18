@@ -10,7 +10,7 @@ const usersRoutes = require('./routes/users');
 
 app.use(cors(
     {
-        origin: [""],
+        origin: ["https://taskify-orcin.vercel.app/"],
         methods: ["POST", "GET", "PUT", "DELETE"],
         credentials: true
 }));
