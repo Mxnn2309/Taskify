@@ -14,7 +14,7 @@ app.use((req,res,next)=>{
     console.log(req.path, req.method);
     next()
 });
-app.options('*', cors());
+app.options('/login', cors());
 
 // Routes
 app.use('/tasks',tasksRoutes);
